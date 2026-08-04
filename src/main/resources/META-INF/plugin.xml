@@ -1,0 +1,32 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>dev.gaphunter.jsonschemacompanion</id>
+    <name>JSON Schema Companion</name>
+    <vendor>Gap Hunter Labs</vendor>
+    <description><![CDATA[
+        <p>Go-to-definition (Ctrl+Click) for `$ref` values inside JSON
+        Schema files, resolved entirely against local files. A real paid
+        competitor's reviewers reported: "the plugin seems not to be able
+        to resolve the references via an internal database but tries to
+        download them from the URI used as ID. This makes references
+        unusable in local development." This plugin never makes a network
+        call -- `$ref` resolution walks local `VirtualFile`s only, and an
+        `http(s)://` `$ref` simply shows as unresolved rather than
+        attempting to fetch it.</p>
+        <p>JSON Schema files are recognized by real content (a top-level
+        `"$schema"` property referencing a real json-schema.org
+        meta-schema), never by file extension guessing -- the other cited
+        complaint: "Activates if you figure out the file extension it
+        triggers on... the plugin randomly recognizes JSON schemas."
+        Broken `$ref`s are flagged with a warning.</p>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.json</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <psi.referenceContributor language="JSON"
+                                   implementation="dev.gaphunter.jsonschemacompanion.reference.JsonRefReferenceContributor"/>
+        <annotator language="JSON" implementationClass="dev.gaphunter.jsonschemacompanion.highlighting.JsonRefAnnotator"/>
+    </extensions>
+</idea-plugin>
