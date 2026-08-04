@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Acme Corp Purchase Order",
+  "type": "object",
+  "properties": {
+    "orderId": { "type": "string" },
+    "customer": { "$ref": "definitions.json#/definitions/Customer" },
+    "lineItems": {
+      "type": "array",
+      "items": { "$ref": "definitions.json#/definitions/LineItem" }
+    },
+    "shippingAddress": { "$ref": "definitions.json#/definitions/Address" },
+    "totalAmountMissing": { "$ref": "definitions.json#/definitions/DoesNotExist" }
+  },
+  "required": ["orderId", "customer", "lineItems"]
+}

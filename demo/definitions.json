@@ -1,0 +1,27 @@
+{
+  "definitions": {
+    "Customer": {
+      "type": "object",
+      "properties": {
+        "company": { "type": "string" },
+        "email": { "type": "string", "format": "email" }
+      }
+    },
+    "LineItem": {
+      "type": "object",
+      "properties": {
+        "sku": { "type": "string" },
+        "quantity": { "type": "integer", "minimum": 1 },
+        "unitPrice": { "type": "number" }
+      }
+    },
+    "Address": {
+      "type": "object",
+      "properties": {
+        "street": { "type": "string" },
+        "city": { "type": "string" },
+        "country": { "type": "string" }
+      }
+    }
+  }
+}
