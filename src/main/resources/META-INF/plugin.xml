@@ -25,6 +25,7 @@
     <depends>com.intellij.modules.json</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup id="JSON Schema Companion" displayType="BALLOON"/>
         <psi.referenceContributor language="JSON"
                                    implementation="dev.gaphunter.jsonschemacompanion.reference.JsonRefReferenceContributor"/>
         <annotator language="JSON" implementationClass="dev.gaphunter.jsonschemacompanion.highlighting.JsonRefAnnotator"/>
