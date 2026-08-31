@@ -42,6 +42,12 @@ separate investigations. Real, verbatim reviewer complaints:
 - **RFC 6901 JSON Pointer resolution**, hand-rolled (`JsonPointer.kt`) --
   the pointer syntax is small and stable, same "hand-roll over new
   dependency" call already made elsewhere in this workspace.
+- **One specific, real gotcha explained, not just flagged as broken:**
+  Draft 2019-09 introduced `$defs` as the new conventional home for
+  reusable definitions, replacing `definitions` -- a `$ref` written for
+  the *other* one silently fails to resolve. When the alternate keyword
+  genuinely resolves in the real document, the warning names the exact
+  fix instead of a generic "cannot resolve".
 
 ## Usage
 
