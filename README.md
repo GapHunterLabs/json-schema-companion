@@ -3,6 +3,13 @@
 Go-to-definition (Ctrl+Click) for `$ref` values inside JSON Schema files,
 resolved entirely against local files.
 
+![JSON Schema Companion: Reliable Ctrl+Click for $ref in JSON Schema, resolved against your local files](docs/media/hero.gif)
+
+Each feature on its own:
+[Go to definition](docs/media/01-go-to-definition.gif) ·
+[definitions vs $defs](docs/media/02-defs-hint.gif) ·
+[Broken $refs](docs/media/03-broken-refs.gif)
+
 ## Why it exists
 
 **JSON Schema Visualizer/Editor** (JetBrains Marketplace id 23554), 3,340
