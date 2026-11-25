@@ -48,7 +48,7 @@ separate investigations. Real, verbatim reviewer complaints:
   platform already ships one.
 - **RFC 6901 JSON Pointer resolution**, hand-rolled (`JsonPointer.kt`) --
   the pointer syntax is small and stable, same "hand-roll over new
-  dependency" call already made elsewhere in this workspace.
+  dependency" call already made in my other plugins.
 - **One specific, real gotcha explained, not just flagged as broken:**
   Draft 2019-09 introduced `$defs` as the new conventional home for
   reusable definitions, replacing `definitions` -- a `$ref` written for
